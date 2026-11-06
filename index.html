@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sukybol · Bolsas de friselina con tu logo desde 500 unidades</title>
+<meta name="description" content="Fábrica de bolsas de friselina con el logo de tu marca, desde 500 unidades. Impresión flexográfica. Despachamos en 2 semanas. Envíos a todo el país.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ===== Tokens (design-system-record.md, aprobado 03/11/2026) ===== */
+  :root {
+    --celeste: #2BA5CC;
+    --verde: #71BF44;
+    --celeste-700: #167393;
+    --ink: #0E2A33;
+    --ink-2: #4A5A60;
+    --paper: #F6F4EF;
+    --white: #FFFFFF;
+    --line: #E3E0D8;
+
+    --font-display: "Poppins", system-ui, sans-serif;
+    --font-body: "Inter", system-ui, sans-serif;
+    --fs-hero: clamp(1.875rem, 7vw, 3.25rem);
+    --fs-h2: clamp(1.625rem, 6vw, 2.5rem);
+    --fs-h3: 1.125rem;
+    --fs-body: 1rem;
+    --fs-lead: 1.125rem;
+    --fs-small: .875rem;
+
+    --r-sm: 8px;
+    --r-md: 14px;
+    --r-pill: 999px;
+
+    --sh-sm: 0 1px 2px rgba(14,42,51,.08), 0 1px 1px rgba(14,42,51,.04);
+    --sh-md: 0 8px 24px rgba(14,42,51,.10), 0 2px 6px rgba(14,42,51,.06);
+
+    --gutter: 16px;
+    --tap: 48px;
+    --section-y: 56px;
+    --max: 1120px;
+    --sticky-h: 76px;
+  }
+
+  /* ===== Base ===== */
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: var(--fs-body); line-height: 1.6; padding-bottom: var(--sticky-h); overflow-x: hidden; }
+  img, video { display: block; max-width: 100%; height: auto; }
+  h1, h2, h3 { font-family: var(--font-display); line-height: 1.12; margin: 0 0 .5em; letter-spacing: -.01em; }
+  h1 { font-size: var(--fs-hero); font-weight: 700; }
+  h2 { font-size: var(--fs-h2); font-weight: 700; }
+  h3 { font-size: var(--fs-h3); font-weight: 600; }
+  p { margin: 0 0 1em; }
+  a { color: var(--celeste-700); }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+  .section { padding: var(--section-y) 0; }
+  .section--white { background: var(--white); }
+  .section--ink { background: var(--ink); color: var(--white); }
+  .section--ink a:not(.btn) { color: var(--white); }
+  .eyebrow { font-size: var(--fs-small); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--celeste-700); margin: 0 0 10px; }
+  .section--ink .eyebrow { color: var(--verde); }
+  .lead { font-size: var(--fs-lead); color: var(--ink-2); }
+  .section--ink .lead { color: rgba(255,255,255,.82); }
+  .cta-row { margin-top: 28px; display: flex; flex-direction: column; gap: 10px; align-items: stretch; }
+
+  /* ===== Botón Presupuestar ===== */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: var(--tap); padding: 0 26px; border-radius: var(--r-pill); font: 600 1.0625rem/1 var(--font-display); text-decoration: none; border: 0; cursor: pointer; transition: transform .15s ease, box-shadow .15s ease, filter .15s ease; }
+  .btn svg { width: 22px; height: 22px; flex: none; }
+  .btn-primary { background: var(--verde); color: var(--ink); box-shadow: var(--sh-md); }
+  .btn-primary:hover { filter: brightness(1.05); transform: translateY(-1px); }
+  .btn-primary:active { transform: translateY(0); box-shadow: var(--sh-sm); }
+  .btn-primary:focus-visible { outline: 3px solid var(--celeste-700); outline-offset: 3px; }
+  .section--ink .btn-primary:focus-visible { outline-color: var(--white); }
+
+  /* ===== 0 · Barra + header ===== */
+  .topbar { background: var(--celeste-700); color: var(--white); font-size: .8125rem; text-align: center; padding: 8px var(--gutter); line-height: 1.4; }
+  .topbar b { font-weight: 600; }
+  .header { background: var(--white); border-bottom: 1px solid var(--line); }
+  .header .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 60px; gap: 12px; }
+  .header img { width: 150px; }
+  .header .btn { display: none; min-height: 44px; padding: 0 18px; font-size: .9375rem; }
+
+  /* ===== 1 · Hero ===== */
+  .hero { padding: 32px 0 var(--section-y); background: var(--white); }
+  .hero-grid { display: grid; gap: 28px; }
+  .hero h1 { margin-bottom: .35em; }
+  .hero .lead { font-size: 1.1875rem; color: var(--ink); }
+  .hero .support { color: var(--ink-2); }
+  /* Carrusel del hero: se desliza con el dedo, flechas y puntos; no pasa solo */
+  .carousel { position: relative; }
+  .carousel-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; border-radius: var(--r-md); box-shadow: var(--sh-md); background: var(--paper); scrollbar-width: none; }
+  .carousel-track::-webkit-scrollbar { display: none; }
+  .carousel-track:focus-visible { outline: 3px solid var(--celeste-700); outline-offset: 3px; }
+  .slide { flex: 0 0 100%; margin: 0; scroll-snap-align: center; position: relative; aspect-ratio: 4 / 5; }
+  .slide img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+  .carousel-btn { position: absolute; top: calc(50% - 22px); width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(255,255,255,.92); color: var(--ink); font: 400 1.75rem/1 var(--font-display); box-shadow: var(--sh-sm); cursor: pointer; display: grid; place-items: center; padding-bottom: 4px; }
+  .carousel-btn.prev { left: 10px; }
+  .carousel-btn.next { right: 10px; }
+  .carousel-btn:disabled { opacity: 0; pointer-events: none; }
+  .carousel-btn:focus-visible { outline: 3px solid var(--celeste-700); outline-offset: 2px; }
+  .carousel-dots { display: flex; justify-content: center; gap: 2px; margin-top: 8px; }
+  .carousel-dots button { width: 32px; height: 32px; border: 0; background: none; cursor: pointer; display: grid; place-items: center; padding: 0; }
+  .carousel-dots button::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--line); transition: background .2s, transform .2s; }
+  .carousel-dots button[aria-selected="true"]::before { background: var(--celeste-700); transform: scale(1.25); }
+  .trust { display: flex; align-items: center; gap: 8px; font-size: var(--fs-small); color: var(--ink-2); margin-top: 4px; justify-content: center; }
+  .trust::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--verde); flex: none; }
+
+  /* ===== 3 · Solución ===== */
+  .split { display: grid; gap: 28px; align-items: center; }
+  .video-frame { border-radius: var(--r-md); overflow: hidden; background: var(--ink); box-shadow: var(--sh-md); max-width: 340px; margin: 0 auto; aspect-ratio: 9 / 16; }
+  .video-frame video { width: 100%; height: 100%; object-fit: cover; }
+  .video-cap { font-size: var(--fs-small); color: var(--ink-2); margin-top: 10px; text-align: center; }
+  .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 24px 0 0; }
+  .fact { background: var(--paper); border-radius: var(--r-sm); padding: 12px 8px; text-align: center; }
+  .fact b { display: block; font: 700 1.375rem/1.1 var(--font-display); color: var(--celeste-700); }
+  .fact span { font-size: .75rem; color: var(--ink-2); line-height: 1.3; display: block; margin-top: 4px; }
+
+  /* ===== 4 · Qué incluye ===== */
+  .inv { list-style: none; padding: 0; margin: 24px 0 0; background: var(--white); border-radius: var(--r-md); box-shadow: var(--sh-sm); }
+  .inv li { display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: center; padding: 16px 18px; border-bottom: 1px solid var(--line); }
+  .inv li:last-child { border-bottom: 0; }
+  .inv .chk { width: 24px; height: 24px; border-radius: 50%; background: var(--verde); color: var(--ink); display: grid; place-items: center; font-size: .8125rem; font-weight: 700; }
+  .inv b { display: block; }
+  .inv span { color: var(--ink-2); font-size: .9375rem; }
+  .not-incl { margin-top: 14px; padding: 14px 18px; border-left: 4px solid var(--celeste); background: var(--white); border-radius: 0 var(--r-sm) var(--r-sm) 0; font-size: .9375rem; }
+  .media-pair { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+  .media-pair figure { margin: 0; }
+  .media-pair img { border-radius: var(--r-md); box-shadow: var(--sh-sm); width: 100%; aspect-ratio: 3 / 4; object-fit: cover; background: var(--white); }
+  .media-pair .contain { object-fit: contain; padding: 8px; }
+  figcaption { font-size: .8125rem; color: var(--ink-2); margin-top: 8px; line-height: 1.4; }
+
+  /* ===== 5 · Opciones ===== */
+  .models { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
+  .model { margin: 0; background: var(--white); border-radius: var(--r-md); overflow: hidden; box-shadow: var(--sh-sm); }
+  .model img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+  .model figcaption { margin: 0; padding: 12px; font: 600 .9375rem/1.3 var(--font-display); color: var(--ink); display: grid; gap: 10px; }
+  .btn-model { display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 10px; border: 2px solid var(--verde); border-radius: var(--r-pill); color: var(--ink); text-decoration: none; font: 600 .8125rem/1.2 var(--font-display); text-align: center; transition: background .15s ease; }
+  .btn-model:hover { background: var(--verde); }
+  .btn-model .desk-only { margin-left: .3em; }
+  .btn-model:focus-visible { outline: 3px solid var(--celeste-700); outline-offset: 2px; }
+  .opts { display: grid; gap: 10px; margin: 24px 0 0; padding: 0; list-style: none; }
+  .opts li { background: var(--white); border-radius: var(--r-md); padding: 14px 16px; box-shadow: var(--sh-sm); }
+  .opts b { font-family: var(--font-display); font-weight: 600; }
+
+  /* ===== 6 · Flexografía ===== */
+  .vids { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 480px; margin: 0 auto; width: 100%; }
+  .vids figure { margin: 0; }
+  .vids video { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: var(--r-md); background: #08181D; }
+  .section--ink figcaption { color: rgba(255,255,255,.7); }
+  .flexo-steps { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 18px; }
+  .flexo-steps li { padding-left: 16px; border-left: 2px solid rgba(113,191,68,.55); }
+  .flexo-steps li::before { content: attr(data-tag); display: inline-block; margin-bottom: 6px; padding: 3px 10px; border-radius: var(--r-pill); background: rgba(113,191,68,.16); color: var(--verde); font: 600 .6875rem/1.4 var(--font-display); letter-spacing: .08em; text-transform: uppercase; }
+  .flexo-steps b { display: block; font-family: var(--font-display); font-weight: 600; }
+  .flexo-steps span { display: block; color: rgba(255,255,255,.78); font-size: .9375rem; margin-top: 2px; }
+
+  /* ===== 7 · Cómo funciona ===== */
+  .steps { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 14px; counter-reset: s; }
+  .steps li { counter-increment: s; background: var(--white); border-radius: var(--r-md); padding: 18px 18px 18px 64px; position: relative; box-shadow: var(--sh-sm); }
+  .steps li::before { content: counter(s); position: absolute; left: 18px; top: 18px; width: 32px; height: 32px; border-radius: 50%; background: var(--celeste-700); color: var(--white); font: 700 .9375rem/32px var(--font-display); text-align: center; }
+  .steps b { display: block; font-family: var(--font-display); font-weight: 600; margin-bottom: 2px; }
+  .steps span { color: var(--ink-2); }
+  .steps .step-media { margin-top: 12px; border-radius: var(--r-sm); border: 1px solid var(--line); background: var(--white); max-height: 260px; width: 100%; object-fit: contain; }
+  .season { margin-top: 16px; display: flex; gap: 12px; align-items: flex-start; background: #FFF8E1; border-radius: var(--r-md); padding: 14px 16px; font-size: .9375rem; }
+  .season::before { content: "!"; flex: none; width: 24px; height: 24px; border-radius: 50%; background: #C9A227; color: var(--white); font-weight: 700; display: grid; place-items: center; font-size: .875rem; }
+
+  /* ===== 8 · Prueba ===== */
+  .quotes { display: grid; gap: 12px; margin-top: 24px; }
+  .quote { background: var(--white); border-radius: var(--r-md); padding: 18px; box-shadow: var(--sh-sm); margin: 0; }
+  .quote p { font-size: 1.0625rem; margin-bottom: 10px; }
+  .quote cite { font-style: normal; font-weight: 600; font-size: .875rem; color: var(--celeste-700); }
+  .quote { display: flex; flex-direction: column; justify-content: space-between; }
+  .quote--feature { background: var(--celeste-700); color: var(--white); }
+  .quote--feature p { font: 600 1.25rem/1.35 var(--font-display); }
+  .quote--feature cite { color: rgba(255,255,255,.85); }
+
+  /* ===== 9 · Presupuesto ===== */
+  .need { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 10px; counter-reset: n; }
+  .need li { counter-increment: n; display: flex; align-items: center; gap: 14px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: var(--r-md); padding: 16px; font-size: 1.0625rem; }
+  .need li::before { content: counter(n); flex: none; width: 32px; height: 32px; border-radius: 50%; background: var(--verde); color: var(--ink); font: 700 .9375rem/32px var(--font-display); text-align: center; }
+
+  .attention { margin-top: 24px; padding: 20px; border-radius: var(--r-md); background: rgba(255,255,255,.06); border-left: 4px solid var(--verde); }
+  .attention h3 { color: var(--white); margin-bottom: .35em; }
+  .attention p { margin: 0; color: rgba(255,255,255,.82); }
+
+  /* ===== 10 · Garantía ===== */
+  .guarantee { display: grid; gap: 16px; grid-template-columns: 56px 1fr; align-items: start; background: var(--white); border-radius: var(--r-md); padding: 22px 18px; box-shadow: var(--sh-sm); }
+  .guarantee .seal { width: 56px; height: 56px; border-radius: 50%; border: 3px solid var(--verde); display: grid; place-items: center; color: var(--celeste-700); font: 700 1.5rem var(--font-display); }
+  .guarantee h2 { font-size: clamp(1.375rem, 5vw, 2rem); }
+
+  /* ===== 11 · FAQ ===== */
+  .faq { margin-top: 24px; border-top: 1px solid var(--line); }
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq summary { list-style: none; cursor: pointer; min-height: var(--tap); padding: 16px 40px 16px 0; position: relative; font-family: var(--font-display); font-weight: 600; font-size: 1.0625rem; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-size: 1.5rem; font-weight: 400; color: var(--celeste-700); }
+  .faq details[open] summary::after { content: "–"; }
+  .faq details p { margin: 0 0 16px; color: var(--ink-2); }
+
+  /* ===== 12 · Cierre ===== */
+  .final { text-align: center; }
+  .final h2 { margin-left: auto; margin-right: auto; }
+  .nowrap { white-space: nowrap; }
+
+  /* ===== Pie ===== */
+  .footer { background: var(--white); border-top: 1px solid var(--line); padding: 32px 0; font-size: var(--fs-small); color: var(--ink-2); }
+  .footer img { width: 140px; margin-bottom: 12px; }
+  .footer p { margin: 0 0 6px; }
+
+  /* ===== Botón fijo mobile ===== */
+  .sticky { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; padding: 12px var(--gutter) calc(12px + env(safe-area-inset-bottom)); background: rgba(255,255,255,.96); border-top: 1px solid var(--line); box-shadow: 0 -6px 18px rgba(14,42,51,.08); transition: transform .25s ease; }
+  .sticky .btn { width: 100%; }
+  .sticky.is-hidden { transform: translateY(110%); }
+
+  /* ===== Desktop ===== */
+  @media (min-width: 768px) {
+    :root { --section-y: 88px; --gutter: 32px; }
+    body { padding-bottom: 0; }
+    .sticky { display: none; }
+    .header .btn { display: inline-flex; }
+    .header img { width: 180px; }
+    .cta-row { flex-direction: row; align-items: center; gap: 16px; }
+    .trust { justify-content: flex-start; margin-top: 0; }
+    .hero { padding: 56px 0 var(--section-y); }
+    .hero-grid { grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
+    .split { grid-template-columns: 1fr 1fr; gap: 56px; }
+    .split--rev > :first-child { order: 2; }
+    .models { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .opts { grid-template-columns: repeat(3, 1fr); }
+    .steps { grid-template-columns: repeat(4, 1fr); }
+    .steps li { padding: 64px 18px 18px; }
+    .quotes { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .quote--feature { grid-column: span 2; }
+    .quote--feature p { font-size: 1.5rem; }
+    .need { grid-template-columns: repeat(3, 1fr); }
+    .guarantee { grid-template-columns: 72px 1fr; padding: 32px; }
+    .guarantee .seal { width: 72px; height: 72px; }
+    .faq { max-width: 820px; }
+    .final .cta-row { justify-content: center; }
+  }
+
+  /* ===== Pasada de mobile (paso 13): sólo afecta a pantallas de menos de 768px ===== */
+  @media (max-width: 767px) {
+    /* Hero: los puntos del carrusel con área táctil de 44px */
+    .carousel-dots { gap: 0; margin-top: 4px; }
+    .carousel-dots button { width: 44px; height: 44px; }
+    /* Hero: la línea de "30 años" ocupa dos renglones; se alinea a la izquierda con el punto arriba */
+    .trust { justify-content: flex-start; align-items: flex-start; }
+    .trust::before { margin-top: 6px; }
+    /* Somos Sukybol: "Desde 1995" en una línea y video vertical más bajo */
+    .fact b { font-size: 1.0625rem; white-space: nowrap; }
+    .fact { padding: 12px 4px; }
+    .video-frame { max-width: 260px; }
+    /* Qué incluye: lista más compacta en pantalla angosta */
+    .inv li { padding: 14px; gap: 10px; }
+    .inv span { font-size: .875rem; line-height: 1.5; }
+    /* Opciones: el botón por modelo dice sólo "Presupuestar" (el modelo ya está arriba) */
+    .desk-only { display: none; }
+    /* Flexografía: pasos más compactos */
+    .flexo-steps { gap: 14px; }
+    .flexo-steps span { font-size: .875rem; line-height: 1.5; }
+    /* Cómo funciona: más ancho para el texto y el plano del polímero */
+    .steps { gap: 12px; }
+    .steps li { padding: 16px 16px 16px 58px; }
+    .steps li::before { left: 14px; top: 16px; }
+    .steps span { font-size: .9375rem; }
+    .season { font-size: .875rem; padding: 12px 14px; }
+    /* Clientes: fila que se desliza hacia el costado, con la tarjeta siguiente asomando */
+    .quotes { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; margin-left: calc(var(--gutter) * -1); margin-right: calc(var(--gutter) * -1); padding: 4px var(--gutter) 12px; scroll-padding-left: var(--gutter); scrollbar-width: none; }
+    .quotes::-webkit-scrollbar { display: none; }
+    .quotes .quote { flex: 0 0 80%; scroll-snap-align: start; }
+    /* Presupuesto: datos y recuadro de atención más compactos */
+    .need li { padding: 14px; font-size: 1rem; gap: 12px; }
+    .attention { padding: 16px; margin-top: 20px; }
+    .attention p { font-size: .9375rem; }
+    /* Garantía: el sello arriba y el texto a todo el ancho */
+    .guarantee { grid-template-columns: 1fr; gap: 12px; padding: 20px 18px; }
+    .guarantee .seal { width: 44px; height: 44px; font-size: 1.125rem; }
+    /* Pie: links de WhatsApp e Instagram con área táctil de 44px */
+    .footer a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 4px; }
+  }
+</style>
+<script>
+  // Píxel de Meta "Sukybol Landing" (Administrador de eventos). Si se vacía, no se carga nada.
+  var META_PIXEL_ID = "3007599956245146";
+  if (META_PIXEL_ID) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', META_PIXEL_ID);
+    fbq('track', 'PageView');
+  }
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=3007599956245146&ev=PageView&noscript=1"></noscript>
+</head>
+<body>
+
+<!-- ===================================================================
+  0 · BARRA SUPERIOR · dolor 2 (filtro: el mínimo aparece antes del primer botón)
+=================================================================== -->
+<div class="topbar"><b>Fábrica de bolsas de friselina</b> · Pedido mínimo 500 unidades · Envíos a todo el país</div>
+<header class="header">
+  <div class="wrap">
+    <img src="assets/fotos/logo-sukybol.png" alt="Sukybol" width="491" height="94">
+    <a class="btn btn-primary js-wa" href="#">Presupuestar</a>
+  </div>
+</header>
+
+<main>
+<!-- ===================================================================
+  1 · HERO · dolores 1 y 2
+  Carrusel de 6 bolsas de clientes reales (YP primero) → "¿qué es exactamente / cómo quedaría con mi logo?"
+  Bruana es la que contesta "¿cómo es de cerca?" (detalle). No avanza solo.
+=================================================================== -->
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Fabricamos bolsas de friselina con el logo de tu marca, desde 500 unidades.</h1>
+      <p class="lead">Llegá a la temporada con tu propia bolsa. Despachamos en 2 semanas.</p>
+      <p class="support">Para marcas y negocios que quieren que su marca se vaya con cada cliente.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary js-wa" href="#" data-wa-icon>Presupuestar</a>
+        <span class="trust">Más de 30 años fabricando bolsas personalizadas.</span>
+      </div>
+    </div>
+    <div class="carousel" aria-roledescription="carrusel" aria-label="Bolsas de clientes reales">
+      <div class="carousel-track" id="carousel-track" tabindex="0">
+        <figure class="slide"><img src="assets/fotos/cliente-yp-laminada-800.jpg" srcset="assets/fotos/cliente-yp-laminada-800.jpg 800w, assets/fotos/cliente-yp-laminada.jpg 1500w" sizes="(min-width: 768px) 45vw, 100vw" alt="Bolsa laminada violeta con manijas verde agua y el logo de YP Indumentaria" width="1500" height="2000" fetchpriority="high"></figure>
+        <figure class="slide"><img src="assets/fotos/cliente-item-metalizada-800.jpg" srcset="assets/fotos/cliente-item-metalizada-800.jpg 800w, assets/fotos/cliente-item-metalizada.jpg 1500w" sizes="(min-width: 768px) 45vw, 100vw" alt="Bolsa metalizada con impresión a todo color de un tigre y un dragón, marca item" width="1500" height="2000" loading="lazy"></figure>
+        <figure class="slide"><img src="assets/fotos/cliente-omm-manija-800.jpg" srcset="assets/fotos/cliente-omm-manija-800.jpg 800w, assets/fotos/cliente-omm-manija.jpg 1500w" sizes="(min-width: 768px) 45vw, 100vw" alt="Bolsa con manija color crudo con flores en cuatro colores, marca omm" width="1500" height="2000" loading="lazy"></figure>
+        <figure class="slide"><img src="assets/fotos/cliente-bruana-rinon-800.jpg" srcset="assets/fotos/cliente-bruana-rinon-800.jpg 800w, assets/fotos/cliente-bruana-rinon.jpg 1500w" sizes="(min-width: 768px) 45vw, 100vw" alt="Detalle de bolsa riñón crudo con logo rosa de Bruana Indumentaria" width="1500" height="2000" loading="lazy"></figure>
+        <figure class="slide"><img src="assets/fotos/cliente-black-laminada-800.jpg" srcset="assets/fotos/cliente-black-laminada-800.jpg 800w, assets/fotos/cliente-black-laminada.jpg 1500w" sizes="(min-width: 768px) 45vw, 100vw" alt="Dos bolsas de la marca BLACK: una laminada negra y una blanca estándar" width="1500" height="2000" loading="lazy"></figure>
+        <figure class="slide"><img src="assets/fotos/cliente-bymagus-mochila-800.jpg" srcset="assets/fotos/cliente-bymagus-mochila-800.jpg 800w, assets/fotos/cliente-bymagus-mochila.jpg 1500w" sizes="(min-width: 768px) 45vw, 100vw" alt="Bolsa mochila color crudo con cordones negros, marca by magus" width="1500" height="2000" loading="lazy"></figure>
+      </div>
+      <button class="carousel-btn prev" type="button" aria-label="Foto anterior">‹</button>
+      <button class="carousel-btn next" type="button" aria-label="Foto siguiente">›</button>
+      <div class="carousel-dots" role="tablist" aria-label="Elegir foto"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================================
+  3 · SOLUCIÓN · dolores 2, 6 y 5
+  Video: Fede en voz en off, subtitulado → contesta "¿hay alguien real del otro lado? ¿es fábrica?"
+=================================================================== -->
+<section class="section" id="fabrica">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Fábrica propia desde 1995</p>
+      <h2>Somos Sukybol. Y trabajamos desde 500 unidades.</h2>
+      <p>Desde 1995 fabricamos bolsas de friselina en nuestra planta de Lanús. Imprimimos, armamos y controlamos cada bolsa nosotros, sin intermediarios.</p>
+      <p>Tenemos más de 30 años en el mercado y fuimos la primera empresa en introducir este tipo de bolsas en la Argentina. Hoy las hacemos desde 500 unidades, para que tu marca tenga su bolsa sin comprar como una cadena.</p>
+      <div class="facts">
+        <div class="fact"><b>Desde 1995</b><span>fabricando en Lanús</span></div>
+        <div class="fact"><b>500</b><span>unidades de pedido mínimo</span></div>
+        <div class="fact"><b>2 sem.</b><span>para despachar</span></div>
+      </div>
+      <div class="cta-row"><a class="btn btn-primary js-wa" href="#" data-wa-icon>Presupuestar</a></div>
+    </div>
+    <div>
+      <div class="video-frame">
+        <video src="assets/videos/web/fede.mp4" controls playsinline preload="metadata" muted></video>
+      </div>
+      <p class="video-cap">Fede, de Sukybol, te cuenta cómo trabajamos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================================
+  4 · QUÉ INCLUYE TU PEDIDO · dolores 4 y 7 (inventario, no copy de venta)
+  Fotos: pedido real listo para despachar → "¿qué me llega?" · polímero → "¿qué veo antes?"
+=================================================================== -->
+<section class="section section--white" id="incluye">
+  <div class="wrap split">
+    <div>
+      <h2>Qué incluye tu pedido</h2>
+      <ul class="inv">
+        <li><span class="chk">✓</span><div><b>Bolsas de friselina con tu logo</b><span>Desde 500 unidades · Tela de 70 g · Medida a elección.</span></div></li>
+        <li><span class="chk">✓</span><div><b>Diseño y asesoramiento 100% personalizado</b><span>Sin costo.</span></div></li>
+        <li><span class="chk">✓</span><div><b>Foto del polímero</b><span>Antes de fabricar, para que veas cómo va a quedar tu bolsa.</span></div></li>
+        <li><span class="chk">✓</span><div><b>Tu polímero de impresión</b><span>Es tuyo. Lo pagás una sola vez, al empezar a trabajar con nosotros, y lo guardamos para tus próximos pedidos.</span></div></li>
+        <li><span class="chk">✓</span><div><b>Despacho</b><span>En 2 semanas · Envíos a todo el país.</span></div></li>
+      </ul>
+      <p class="not-incl"><b>Lo que no está incluido:</b> El polímero no está incluido en el precio de las bolsas; se paga una sola vez.</p>
+      <div class="cta-row"><a class="btn btn-primary js-wa" href="#" data-wa-icon>Presupuestar</a></div>
+    </div>
+    <div class="media-pair">
+      <figure>
+        <img src="assets/fotos/pedido-real.jpg" alt="Pedido real de bolsas de friselina embolsadas y listas para despachar" width="720" height="1280" loading="lazy">
+        <figcaption>Pedidos listos para despachar.</figcaption>
+      </figure>
+      <figure>
+        <img class="contain" src="assets/fotos/polimero-navidad-800.jpg" srcset="assets/fotos/polimero-navidad-800.jpg 800w, assets/fotos/polimero-navidad.jpg 1000w" sizes="(min-width: 768px) 25vw, 70vw" alt="Plano de un polímero de bolsa de 45 x 40 cm con diseño navideño y medidas" width="1000" height="1080" loading="lazy">
+        <figcaption>Así te mostramos tu bolsa antes de fabricarla.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================================
+  5 · OPCIONES · dolor 3
+  Una foto por modelo, de clientes distintos a los del carrusel (05/11) → "¿qué modelos hay y cómo es cada uno?"
+  Fotos con luz y color corregidos (no recortadas: el fondo es gris claro).
+  Escala: el cliente pidió sacar el hueco (05/11). La pregunta "¿de qué tamaño es de verdad?" queda sin foto.
+=================================================================== -->
+<section class="section" id="opciones">
+  <div class="wrap">
+    <h2>Tu bolsa, como la imagina tu marca.</h2>
+    <div class="models">
+      <figure class="model"><img src="assets/fotos-modelos/manija-keywest-800.jpg" srcset="assets/fotos-modelos/manija-keywest-800.jpg 800w, assets/fotos-modelos/manija-keywest.jpg 1500w" sizes="(min-width: 768px) 30vw, 50vw" alt="Dos bolsas blancas con manija negra y el logo de Key West" width="1500" height="2000" loading="lazy"><figcaption>Con manija<a class="btn-model js-wa-model" href="#" data-model="con manija">Presupuestar<span class="desk-only"> este modelo</span></a></figcaption></figure>
+      <figure class="model"><img src="assets/fotos-modelos/rinon-ar-800.jpg" srcset="assets/fotos-modelos/rinon-ar-800.jpg 800w, assets/fotos-modelos/rinon-ar.jpg 1500w" sizes="(min-width: 768px) 30vw, 50vw" alt="Bolsa riñón blanca con el logo de AR Showroom" width="1500" height="2000" loading="lazy"><figcaption>Riñón<a class="btn-model js-wa-model" href="#" data-model="riñón">Presupuestar<span class="desk-only"> este modelo</span></a></figcaption></figure>
+      <figure class="model"><img src="assets/fotos-modelos/marinero-araquina-800.jpg" srcset="assets/fotos-modelos/marinero-araquina-800.jpg 800w, assets/fotos-modelos/marinero-araquina.jpg 960w" sizes="(min-width: 768px) 30vw, 50vw" alt="Bolso marinero crudo con cordón e impresión de Araquina" width="960" height="1280" loading="lazy"><figcaption>Marinero<a class="btn-model js-wa-model" href="#" data-model="marinero">Presupuestar<span class="desk-only"> este modelo</span></a></figcaption></figure>
+      <figure class="model"><img src="assets/fotos-modelos/mochila-luna-800.jpg" srcset="assets/fotos-modelos/mochila-luna-800.jpg 800w, assets/fotos-modelos/mochila-luna.jpg 960w" sizes="(min-width: 768px) 30vw, 50vw" alt="Bolsa mochila cruda con cordones y el logo de Luna bags &amp; shoes" width="960" height="1280" loading="lazy"><figcaption>Mochila<a class="btn-model js-wa-model" href="#" data-model="mochila">Presupuestar<span class="desk-only"> este modelo</span></a></figcaption></figure>
+      <figure class="model"><img src="assets/fotos-modelos/laminada-malmo-800.jpg" srcset="assets/fotos-modelos/laminada-malmo-800.jpg 800w, assets/fotos-modelos/laminada-malmo.jpg 1500w" sizes="(min-width: 768px) 30vw, 50vw" alt="Dos bolsas laminadas, una blanca y una negra, con el logo de Malmö Store" width="1500" height="2000" loading="lazy"><figcaption>Laminada<a class="btn-model js-wa-model" href="#" data-model="laminada">Presupuestar<span class="desk-only"> este modelo</span></a></figcaption></figure>
+      <figure class="model"><img src="assets/fotos-modelos/metalizada-intermac-800.jpg" srcset="assets/fotos-modelos/metalizada-intermac-800.jpg 800w, assets/fotos-modelos/metalizada-intermac.jpg 1500w" sizes="(min-width: 768px) 30vw, 50vw" alt="Bolsa metalizada celeste con el logo de Intermac Assistance" width="1500" height="2000" loading="lazy"><figcaption>Metalizada<a class="btn-model js-wa-model" href="#" data-model="metalizada">Presupuestar<span class="desk-only"> este modelo</span></a></figcaption></figure>
+    </div>
+    <ul class="opts">
+      <li><b>Impresión:</b> hasta 4 colores, de una o de las dos caras.</li>
+      <li><b>Tela:</b> en varios colores.</li>
+      <li><b>Medidas:</b> a pedido, de 5 en 5 cm.</li>
+    </ul>
+    <div class="cta-row"><a class="btn btn-primary js-wa" href="#" data-wa-icon>Presupuestar</a></div>
+  </div>
+</section>
+
+<!-- ===================================================================
+  6 · FLEXOGRAFÍA · dolores 4, 2 y 7
+  Videos: impresión (img_6155) y armado (img_8025) → "¿cómo se hace? ¿es fábrica de verdad?"
+  Datos técnicos (05/11): resumidos de un artículo de SP Group sobre flexografía (spg-pack.com) que pasó el cliente.
+  Sólo lo general de la técnica. Lo de Sukybol (hasta 4 colores, el polímero guardado) sale del cliente.
+=================================================================== -->
+<section class="section section--ink" id="flexografia">
+  <div class="wrap split split--rev">
+    <div>
+      <p class="eyebrow">Cómo imprimimos</p>
+      <h2>Impresión de fábrica grande, desde 500 bolsas.</h2>
+      <p class="lead">Imprimimos en flexografía, el sistema que se suele usar para pedidos de miles de bolsas.</p>
+      <ul class="flexo-steps">
+        <li data-tag="Polímero"><div><b>Con tu logo hacemos un polímero.</b><span>Es una plancha flexible con tu diseño en relieve. Se hace una por color, hasta 4 colores.</span></div></li>
+        <li data-tag="Impresión"><div><b>Imprimimos el rollo de friselina.</b><span>La tinta se apoya sólo sobre el relieve, por eso el logo sale nítido y parejo en todas las bolsas. Es un sistema rotativo, con tintas de secado rápido, pensado para producir mucho en poco tiempo.</span></div></li>
+        <li data-tag="Armado"><div><b>Después armamos cada bolsa.</b><span>La sellamos, controlamos la calidad y la embalamos para el despacho.</span></div></li>
+      </ul>
+      <p style="margin-top:18px">Como el polímero queda guardado, tu logo sale igual en cada pedido.</p>
+      <div class="cta-row"><a class="btn btn-primary js-wa" href="#" data-wa-icon>Presupuestar</a></div>
+    </div>
+    <div class="vids">
+      <figure><video class="js-autoplay" src="assets/videos/web/impresion.mp4" muted loop playsinline preload="metadata"></video><figcaption>Impresión del rollo.</figcaption></figure>
+      <figure><video class="js-autoplay" src="assets/videos/web/armado.mp4" muted loop playsinline preload="metadata"></video><figcaption>Armado de la bolsa.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================================
+  7 · CÓMO FUNCIONA · dolores 4, 5 y 1
+  Foto en el paso 3: polímero real (casamiento) → "¿qué voy a aprobar?"
+=================================================================== -->
+<section class="section" id="como-funciona">
+  <div class="wrap">
+    <h2>Así hacemos tu bolsa.</h2>
+    <ol class="steps">
+      <li><b>Escribinos</b><span>por WhatsApp con la cantidad que necesitás (fabricamos mayorista desde 500).</span></li>
+      <li><b>Mandanos tu logo y la cantidad a producir.</b><span>Te asesoramos con el diseño, la medida y el modelo.</span></li>
+      <li><b>Mirá tu bolsa antes de que exista.</b><span>Te mandamos la foto del polímero para que la apruebes.</span>
+        <img class="step-media" src="assets/fotos/polimero-casamiento-800.jpg" srcset="assets/fotos/polimero-casamiento-800.jpg 800w, assets/fotos/polimero-casamiento.jpg 1050w" sizes="(min-width: 768px) 25vw, 70vw" alt="Plano de un polímero real de bolsa de 50 x 40 cm con un dibujo de recién casados" width="1050" height="1080" loading="lazy"></li>
+      <li><b>Fabricamos y despachamos</b><span>a todo el país en 2 semanas.</span></li>
+    </ol>
+    <p class="season">En temporada alta (octubre a diciembre) el plazo puede extenderse. Consultanos la fecha cuando pidas tu presupuesto.</p>
+    <div class="cta-row"><a class="btn btn-primary js-wa" href="#" data-wa-icon>Presupuestar</a></div>
+  </div>
+</section>
+
+<!-- ===================================================================
+  8 · PRUEBA · dolores 1, 4 y 5
+  5 reseñas escritas, textuales y sin corregir: YP (destacada), RENATTASHOES, MARILYNPARANA, LEBKA, SINAI.
+  Sin capturas ni fuente al lado del nombre (decisión del cliente, 05–06/11). Las capturas quedan en assets/testimonios.
+=================================================================== -->
+<section class="section section--white" id="clientes">
+  <div class="wrap">
+    <h2>Marcas que ya tienen su bolsa.</h2>
+    <p class="lead">Algunas de las marcas que ya trabajan con nosotros.</p>
+    <div class="quotes">
+      <figure class="quote quote--feature"><p>“Hermosas!! Las bolsas para recibir esta nueva temporada! Gracias!!!”</p><cite>YP_INDUMENTARIA</cite></figure>
+      <figure class="quote"><p>“Los mejores!”</p><cite>RENATTASHOES</cite></figure>
+      <figure class="quote"><p>“Hermosas!!! Amamosss”</p><cite>MARILYNPARANA</cite></figure>
+      <figure class="quote"><p>“Fede! Muchas gracias por las bolsas!!!! Están geniales!”</p><cite>LEBKA</cite></figure>
+      <figure class="quote"><p>“Me encantaron las bolsas Fede! Muchas gracias”</p><cite>SINAI</cite></figure>
+    </div>
+    <div class="cta-row"><a class="btn btn-primary js-wa" href="#" data-wa-icon>Presupuestar</a></div>
+  </div>
+</section>
+
+<!-- ===================================================================
+  9 · CÓMO PEDIR TU PRESUPUESTO (oferta, sin precio) · dolor 2
+=================================================================== -->
+<section class="section section--ink" id="presupuesto">
+  <div class="wrap">
+    <h2>Para presupuestar necesitamos 3 datos.</h2>
+    <ol class="need">
+      <li>La cantidad de bolsas que necesitás (desde 500).</li>
+      <li>La medida aproximada, o para qué rubro es, así te podemos orientar.</li>
+      <li>El logo de tu marca.</li>
+    </ol>
+    <div class="attention">
+      <h3>Atención personalizada e inmediata.</h3>
+      <p>Nuestro equipo comercial te acompaña en cada paso, desde el primer presupuesto hasta que tus bolsas salen de la fábrica.</p>
+    </div>
+    <div class="cta-row"><a class="btn btn-primary js-wa" href="#" data-wa-icon>Presupuestar</a></div>
+  </div>
+</section>
+
+<!-- ===================================================================
+  10 · GARANTÍA · dolores 4 y 5 (textual del cuestionario, sin inventar reposición)
+=================================================================== -->
+<section class="section" id="garantia">
+  <div class="wrap">
+    <div class="guarantee">
+      <div class="seal" aria-hidden="true">✓</div>
+      <div>
+        <h2>Revisamos cada pedido antes de despacharlo.</h2>
+        <p>Controlamos la calidad de todas las bolsas antes de que salgan de la fábrica. Y si aparece un problema, lo resolvemos con vos.</p>
+        <div class="cta-row" style="margin-top:16px"><a class="btn btn-primary js-wa" href="#" data-wa-icon>Presupuestar</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================================
+  11 · PREGUNTAS FRECUENTES · dolores 2, 1, 6, 7 y 4
+=================================================================== -->
+<section class="section section--white" id="preguntas">
+  <div class="wrap">
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq">
+      <details><summary>¿Cuál es el pedido mínimo?</summary><p>Realizamos venta mayorista desde 500 bolsas.</p></details>
+      <details><summary>¿Hacen 50 o 100 bolsas?</summary><p>No. Trabajamos desde 500 unidades.</p></details>
+      <details><summary>¿Cuánto tardan?</summary><p>Despachamos en 2 semanas. En temporada alta (octubre a diciembre) el plazo puede extenderse.</p></details>
+      <details><summary>¿Envían al interior?</summary><p>Sí, a todo el país. En AMBA entregamos con flota propia y al interior despachamos por transporte.</p></details>
+      <details><summary>¿Cuánto cuesta?</summary><p>Depende de la cantidad, la medida y la impresión. Para una cotización más personalizada, podés contactarte por WhatsApp y te enviamos toda la información.</p></details>
+      <details><summary>¿Cómo se paga? ¿Hacen factura?</summary><p>Realizamos Factura A. Se puede abonar en efectivo, transferencia o cheque.</p></details>
+      <details><summary>¿El polímero lo pago en cada pedido?</summary><p>No. Se paga una sola vez y queda guardado para tus reposiciones.</p></details>
+      <details><summary>¿Puedo ver cómo queda antes de que la fabriquen?</summary><p>Sí. Te mandamos la foto del polímero antes de producir.</p></details>
+      <details><summary>¿Son fábrica o revendedores?</summary><p>Somos fábrica. Fabricamos en nuestra planta de Lanús desde 1995.</p></details>
+      <details><summary>¿Qué gramaje usan?</summary><p>Friselina de 70 g, estándar, laminada o metalizada.</p></details>
+      <details><summary>¿Se puede imprimir de los dos lados?</summary><p>Sí, de una o de las dos caras, con hasta 4 colores.</p></details>
+    </div>
+    <div class="cta-row"><a class="btn btn-primary js-wa" href="#" data-wa-icon>Presupuestar</a></div>
+  </div>
+</section>
+
+<!-- ===================================================================
+  12 · CIERRE · dolor 1
+=================================================================== -->
+<section class="section final" id="cierre">
+  <div class="wrap">
+    <h2><span class="nowrap">Tu temporada empieza</span><br>con tu bolsa.</h2>
+    <p class="lead">Desde 500 unidades. Despachamos en 2 semanas.</p>
+    <div class="cta-row"><a class="btn btn-primary js-wa js-final" href="#" data-wa-icon>Presupuestar por WhatsApp</a></div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <img src="assets/fotos/logo-sukybol.png" alt="Sukybol" width="491" height="94" loading="lazy">
+    <p>Manuela Pedraza 3063, Lanús Oeste, Buenos Aires</p>
+    <p>WhatsApp <a class="js-wa" href="#">+54 9 11 7358-1053</a> · Instagram <a href="https://www.instagram.com/sukybol/" target="_blank" rel="noopener">@sukybol</a></p>
+  </div>
+</footer>
+
+<!-- Botón fijo mobile -->
+<div class="sticky is-hidden" id="sticky"><a class="btn btn-primary js-wa" href="#" data-wa-icon>Presupuestar por WhatsApp</a></div>
+
+<script>
+  // Todos los botones van al WhatsApp de Sukybol con el mensaje aprobado.
+  var WA = "https://wa.me/5491173581053?text=" + encodeURIComponent("Hola Sukybol, quiero presupuestar ___ bolsas con mi logo");
+  var ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>';
+  document.querySelectorAll(".js-wa").forEach(function (a) {
+    a.href = WA;
+    a.target = "_blank";
+    a.rel = "noopener";
+    if (a.hasAttribute("data-wa-icon")) a.insertAdjacentHTML("afterbegin", ICON);
+  });
+
+  // Botones por modelo: el mensaje ya trae el modelo elegido.
+  document.querySelectorAll(".js-wa-model").forEach(function (a) {
+    a.href = "https://wa.me/5491173581053?text=" + encodeURIComponent("Hola Sukybol, quiero presupuestar ___ bolsas modelo " + a.dataset.model + " con mi logo");
+    a.target = "_blank";
+    a.rel = "noopener";
+  });
+
+  // Cada clic en un botón de WhatsApp se registra en Meta como "Contact" (sólo si el píxel está cargado).
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest(".js-wa, .js-wa-model");
+    if (!a || typeof window.fbq !== "function") return;
+    fbq("track", "Contact", { content_name: a.dataset.model ? "Modelo " + a.dataset.model : "Presupuestar" });
+  });
+
+  // Carrusel del hero: flechas, puntos y swipe nativo (scroll-snap). No avanza solo.
+  (function () {
+    var track = document.getElementById("carousel-track");
+    if (!track) return;
+    var slides = track.querySelectorAll(".slide");
+    var prev = document.querySelector(".carousel-btn.prev");
+    var next = document.querySelector(".carousel-btn.next");
+    var dotsBox = document.querySelector(".carousel-dots");
+    var dots = [];
+    slides.forEach(function (s, i) {
+      var d = document.createElement("button");
+      d.type = "button";
+      d.setAttribute("role", "tab");
+      d.setAttribute("aria-label", "Foto " + (i + 1) + " de " + slides.length);
+      d.addEventListener("click", function () { go(i); });
+      dotsBox.appendChild(d);
+      dots.push(d);
+    });
+    function current() { return Math.round(track.scrollLeft / track.clientWidth); }
+    function go(i) { track.scrollTo({ left: i * track.clientWidth }); }
+    function update() {
+      var i = current();
+      dots.forEach(function (d, k) { d.setAttribute("aria-selected", String(k === i)); });
+      prev.disabled = i === 0;
+      next.disabled = i === slides.length - 1;
+    }
+    prev.addEventListener("click", function () { go(current() - 1); });
+    next.addEventListener("click", function () { go(current() + 1); });
+    track.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") { e.preventDefault(); go(current() + 1); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); go(current() - 1); }
+    });
+    var t;
+    track.addEventListener("scroll", function () { clearTimeout(t); t = setTimeout(update, 60); });
+    window.addEventListener("resize", update);
+    update();
+  })();
+
+  // Videos de proceso: se reproducen sólo cuando están en pantalla.
+  var vids = document.querySelectorAll(".js-autoplay");
+  if ("IntersectionObserver" in window) {
+    var vo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { var p = e.target.play(); if (p && p.catch) p.catch(function () {}); }
+        else e.target.pause();
+      });
+    }, { threshold: .35 });
+    vids.forEach(function (v) { vo.observe(v); });
+  }
+
+  // El botón fijo se esconde cuando ya hay un botón de presupuestar en pantalla (hero o cierre).
+  var sticky = document.getElementById("sticky");
+  var anchors = [document.querySelector(".hero .js-wa"), document.querySelector(".js-final")];
+  function updateSticky() {
+    var h = window.innerHeight;
+    var onScreen = anchors.some(function (a) {
+      if (!a) return false;
+      var r = a.getBoundingClientRect();
+      return r.bottom > 0 && r.top < h;
+    });
+    sticky.classList.toggle("is-hidden", onScreen);
+  }
+  // Se mide en cada scroll: son sólo dos botones, no hace falta más.
+  window.addEventListener("scroll", updateSticky, { passive: true });
+  window.addEventListener("resize", updateSticky);
+  updateSticky();
+</script>
+</body>
+</html>
