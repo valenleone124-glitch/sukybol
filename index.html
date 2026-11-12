@@ -213,6 +213,22 @@
   .sticky .btn { width: 100%; }
   .sticky.is-hidden { transform: translateY(110%); }
 
+  /* ===== Paso de cantidad (antes del WhatsApp) ===== */
+  .qty { width: min(440px, calc(100% - 32px)); border: 0; border-radius: var(--r-md); padding: 28px 22px 22px; box-shadow: var(--sh-md); color: var(--ink); background: var(--white); }
+  .qty::backdrop { background: rgba(14,42,51,.55); }
+  .qty h2 { font-size: 1.375rem; margin: 0 0 18px; padding-right: 28px; }
+  .qty-sub { color: var(--ink-2); margin: 0 0 18px; }
+  .qty-close { position: absolute; top: 8px; right: 8px; width: 44px; height: 44px; border: 0; background: none; font-size: 1.75rem; line-height: 1; color: var(--ink-2); cursor: pointer; border-radius: 50%; }
+  .qty-close:focus-visible { outline: 3px solid var(--celeste-700); }
+  .qty-options { display: grid; gap: 10px; }
+  .qty-opt { display: flex; align-items: center; justify-content: center; min-height: 52px; border-radius: var(--r-pill); border: 2px solid var(--verde); background: var(--white); color: var(--ink); font: 600 1rem var(--font-display); text-decoration: none; cursor: pointer; transition: background .15s ease; }
+  .qty-opt:hover { background: var(--verde); }
+  .qty-opt:focus-visible { outline: 3px solid var(--celeste-700); outline-offset: 2px; }
+  .qty-opt--low { border-color: var(--line); color: var(--ink-2); font-weight: 500; }
+  .qty-opt--low:hover { background: var(--paper); }
+  .qty-note { font-size: var(--fs-small); color: var(--ink-2); text-align: center; margin: 14px 0 0; }
+  .qty-ok { width: 100%; }
+
   /* ===== Desktop ===== */
   @media (min-width: 768px) {
     :root { --section-y: 88px; --gutter: 32px; }
@@ -260,7 +276,7 @@
     /* Flexografía: pasos más compactos */
     .flexo-steps { gap: 14px; }
     .flexo-steps span { font-size: .875rem; line-height: 1.5; }
-    /* Cómo funciona: más ancho para el texto y el plano del polímero */
+    /* Cómo funciona: más ancho para el texto y el diseño con medidas */
     .steps { gap: 12px; }
     .steps li { padding: 16px 16px 16px 58px; }
     .steps li::before { left: 14px; top: 16px; }
@@ -318,8 +334,8 @@
 <section class="hero" id="inicio">
   <div class="wrap hero-grid">
     <div>
-      <h1>Fabricamos bolsas de friselina con el logo de tu marca, desde 500 unidades.</h1>
-      <p class="lead">Llegá a la temporada con tu propia bolsa. Despachamos en 2 semanas.</p>
+      <h1>Que la temporada no te encuentre sin bolsas.</h1>
+      <p class="lead">Fabricamos bolsas de friselina con el logo de tu marca desde 500 unidades. Despachamos en 2 semanas.</p>
       <p class="support">Para marcas y negocios que quieren que su marca se vaya con cada cliente.</p>
       <div class="cta-row">
         <a class="btn btn-primary js-wa" href="#" data-wa-icon>Presupuestar</a>
@@ -371,7 +387,7 @@
 
 <!-- ===================================================================
   4 · QUÉ INCLUYE TU PEDIDO · dolores 4 y 7 (inventario, no copy de venta)
-  Fotos: pedido real listo para despachar → "¿qué me llega?" · polímero → "¿qué veo antes?"
+  Fotos: pedido real listo para despachar → "¿qué me llega?" · diseño con medidas → "¿qué veo antes?"
 =================================================================== -->
 <section class="section section--white" id="incluye">
   <div class="wrap split">
@@ -380,7 +396,7 @@
       <ul class="inv">
         <li><span class="chk">✓</span><div><b>Bolsas de friselina con tu logo</b><span>Desde 500 unidades · Tela de 70 g · Medida a elección.</span></div></li>
         <li><span class="chk">✓</span><div><b>Diseño y asesoramiento 100% personalizado</b><span>Sin costo.</span></div></li>
-        <li><span class="chk">✓</span><div><b>Foto del polímero</b><span>Antes de fabricar, para que veas cómo va a quedar tu bolsa.</span></div></li>
+        <li><span class="chk">✓</span><div><b>Diseño con medidas para aprobar</b><span>Antes de fabricar te mandamos tu bolsa diseñada, con sus medidas, para que veas cómo va a quedar.</span></div></li>
         <li><span class="chk">✓</span><div><b>Tu polímero de impresión</b><span>Es tuyo. Lo pagás una sola vez, al empezar a trabajar con nosotros, y lo guardamos para tus próximos pedidos.</span></div></li>
         <li><span class="chk">✓</span><div><b>Despacho</b><span>En 2 semanas · Envíos a todo el país.</span></div></li>
       </ul>
@@ -393,7 +409,7 @@
         <figcaption>Pedidos listos para despachar.</figcaption>
       </figure>
       <figure>
-        <img class="contain" src="assets/fotos/polimero-navidad-800.jpg" srcset="assets/fotos/polimero-navidad-800.jpg 800w, assets/fotos/polimero-navidad.jpg 1000w" sizes="(min-width: 768px) 25vw, 70vw" alt="Plano de un polímero de bolsa de 45 x 40 cm con diseño navideño y medidas" width="1000" height="1080" loading="lazy">
+        <img class="contain" src="assets/fotos/polimero-navidad-800.jpg" srcset="assets/fotos/polimero-navidad-800.jpg 800w, assets/fotos/polimero-navidad.jpg 1000w" sizes="(min-width: 768px) 25vw, 70vw" alt="Diseño de una bolsa de 45 x 40 cm con motivo navideño y sus medidas" width="1000" height="1080" loading="lazy">
         <figcaption>Así te mostramos tu bolsa antes de fabricarla.</figcaption>
       </figure>
     </div>
@@ -439,7 +455,7 @@
       <h2>Impresión de fábrica grande, desde 500 bolsas.</h2>
       <p class="lead">Imprimimos en flexografía, el sistema que se suele usar para pedidos de miles de bolsas.</p>
       <ul class="flexo-steps">
-        <li data-tag="Polímero"><div><b>Con tu logo hacemos un polímero.</b><span>Es una plancha flexible con tu diseño en relieve. Se hace una por color, hasta 4 colores.</span></div></li>
+        <li data-tag="Polímero"><div><b>Con tu diseño aprobado hacemos un polímero.</b><span>Es una plancha flexible con tu diseño en relieve. Se hace una por color, hasta 4 colores.</span></div></li>
         <li data-tag="Impresión"><div><b>Imprimimos el rollo de friselina.</b><span>La tinta se apoya sólo sobre el relieve, por eso el logo sale nítido y parejo en todas las bolsas. Es un sistema rotativo, con tintas de secado rápido, pensado para producir mucho en poco tiempo.</span></div></li>
         <li data-tag="Armado"><div><b>Después armamos cada bolsa.</b><span>La sellamos, controlamos la calidad y la embalamos para el despacho.</span></div></li>
       </ul>
@@ -455,7 +471,7 @@
 
 <!-- ===================================================================
   7 · CÓMO FUNCIONA · dolores 4, 5 y 1
-  Foto en el paso 3: polímero real (casamiento) → "¿qué voy a aprobar?"
+  Foto en el paso 3: diseño real con medidas (casamiento) → "¿qué voy a aprobar?". El polímero se hace DESPUÉS de aprobarlo (corrección del cliente 12/11).
 =================================================================== -->
 <section class="section" id="como-funciona">
   <div class="wrap">
@@ -463,8 +479,8 @@
     <ol class="steps">
       <li><b>Escribinos</b><span>por WhatsApp con la cantidad que necesitás (fabricamos mayorista desde 500).</span></li>
       <li><b>Mandanos tu logo y la cantidad a producir.</b><span>Te asesoramos con el diseño, la medida y el modelo.</span></li>
-      <li><b>Mirá tu bolsa antes de que exista.</b><span>Te mandamos la foto del polímero para que la apruebes.</span>
-        <img class="step-media" src="assets/fotos/polimero-casamiento-800.jpg" srcset="assets/fotos/polimero-casamiento-800.jpg 800w, assets/fotos/polimero-casamiento.jpg 1050w" sizes="(min-width: 768px) 25vw, 70vw" alt="Plano de un polímero real de bolsa de 50 x 40 cm con un dibujo de recién casados" width="1050" height="1080" loading="lazy"></li>
+      <li><b>Mirá tu bolsa antes de que exista.</b><span>Te mandamos el diseño de tu bolsa con sus medidas para que lo apruebes. Con tu OK hacemos el polímero.</span>
+        <img class="step-media" src="assets/fotos/polimero-casamiento-800.jpg" srcset="assets/fotos/polimero-casamiento-800.jpg 800w, assets/fotos/polimero-casamiento.jpg 1050w" sizes="(min-width: 768px) 25vw, 70vw" alt="Diseño real de una bolsa de 50 x 40 cm con un dibujo de recién casados y sus medidas" width="1050" height="1080" loading="lazy"></li>
       <li><b>Fabricamos y despachamos</b><span>a todo el país en 2 semanas.</span></li>
     </ol>
     <p class="season">En temporada alta (octubre a diciembre) el plazo puede extenderse. Consultanos la fecha cuando pidas tu presupuesto.</p>
@@ -541,7 +557,7 @@
       <details><summary>¿Cuánto cuesta?</summary><p>Depende de la cantidad, la medida y la impresión. Para una cotización más personalizada, podés contactarte por WhatsApp y te enviamos toda la información.</p></details>
       <details><summary>¿Cómo se paga? ¿Hacen factura?</summary><p>Realizamos Factura A. Se puede abonar en efectivo, transferencia o cheque.</p></details>
       <details><summary>¿El polímero lo pago en cada pedido?</summary><p>No. Se paga una sola vez y queda guardado para tus reposiciones.</p></details>
-      <details><summary>¿Puedo ver cómo queda antes de que la fabriquen?</summary><p>Sí. Te mandamos la foto del polímero antes de producir.</p></details>
+      <details><summary>¿Puedo ver cómo queda antes de que la fabriquen?</summary><p>Sí. Antes de producir te mandamos el diseño de tu bolsa con sus medidas para que lo apruebes.</p></details>
       <details><summary>¿Son fábrica o revendedores?</summary><p>Somos fábrica. Fabricamos en nuestra planta de Lanús desde 1995.</p></details>
       <details><summary>¿Qué gramaje usan?</summary><p>Friselina de 70 g, estándar, laminada o metalizada.</p></details>
       <details><summary>¿Se puede imprimir de los dos lados?</summary><p>Sí, de una o de las dos caras, con hasta 4 colores.</p></details>
@@ -573,6 +589,25 @@
 <!-- Botón fijo mobile -->
 <div class="sticky is-hidden" id="sticky"><a class="btn btn-primary js-wa" href="#" data-wa-icon>Presupuestar por WhatsApp</a></div>
 
+<!-- Paso previo al WhatsApp: filtra por cantidad. Sólo 500+ abre WhatsApp y cuenta como "Contact" en Meta. -->
+<dialog class="qty" id="qty" aria-labelledby="qty-title">
+  <button class="qty-close" type="button" aria-label="Cerrar" data-qty-close>×</button>
+  <div class="qty-step" id="qty-ask">
+    <h2 id="qty-title">¿Cuántas bolsas necesitás?</h2>
+    <div class="qty-options">
+      <a class="qty-opt" href="#" data-qty="500 a 1.000" target="_blank" rel="noopener">500 a 1.000</a>
+      <a class="qty-opt" href="#" data-qty="1.000 a 3.000" target="_blank" rel="noopener">1.000 a 3.000</a>
+      <a class="qty-opt" href="#" data-qty="más de 3.000" target="_blank" rel="noopener">Más de 3.000</a>
+      <button class="qty-opt qty-opt--low" type="button" data-qty-low>Menos de 500</button>
+    </div>
+    <p class="qty-note">Fabricamos desde 500 unidades.</p>
+  </div>
+  <div class="qty-step" id="qty-low" hidden>
+    <h2>En Sukybol ofrecemos una venta mayorista con un mínimo de 500 unidades.</h2>
+    <button class="btn btn-primary qty-ok" type="button" data-qty-close>Entendido</button>
+  </div>
+</dialog>
+
 <script>
   // Todos los botones van al WhatsApp de Sukybol con el mensaje aprobado.
   var WA = "https://wa.me/5491173581053?text=" + encodeURIComponent("Hola Sukybol, quiero presupuestar ___ bolsas con mi logo");
@@ -591,12 +626,50 @@
     a.rel = "noopener";
   });
 
-  // Cada clic en un botón de WhatsApp se registra en Meta como "Contact" (sólo si el píxel está cargado).
-  document.addEventListener("click", function (e) {
-    var a = e.target.closest && e.target.closest(".js-wa, .js-wa-model");
-    if (!a || typeof window.fbq !== "function") return;
-    fbq("track", "Contact", { content_name: a.dataset.model ? "Modelo " + a.dataset.model : "Presupuestar" });
-  });
+  // Paso de cantidad: los botones de WhatsApp abren primero la pregunta "¿Cuántas bolsas necesitás?".
+  // 500 o más → WhatsApp con la cantidad (y el modelo) escritos + evento "Contact" en Meta.
+  // Menos de 500 → mensaje amable, sin WhatsApp + evento propio "MenosDe500" (no cuenta como conversión).
+  (function () {
+    var dlg = document.getElementById("qty");
+    if (!dlg || typeof dlg.showModal !== "function") return; // sin soporte: los botones van directo a WhatsApp
+    var ask = document.getElementById("qty-ask");
+    var low = document.getElementById("qty-low");
+    var opts = dlg.querySelectorAll("a.qty-opt");
+    var model = "";
+
+    function track(name, params, custom) {
+      if (typeof window.fbq !== "function") return;
+      custom ? fbq("trackCustom", name, params) : fbq("track", name, params);
+    }
+    function open(m) {
+      model = m || "";
+      opts.forEach(function (o) {
+        var msg = "Hola Sukybol, quiero presupuestar " + o.dataset.qty + " bolsas" + (model ? " modelo " + model : "") + " con mi logo";
+        o.href = "https://wa.me/5491173581053?text=" + encodeURIComponent(msg);
+      });
+      ask.hidden = false; low.hidden = true;
+      dlg.showModal();
+    }
+
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest(".js-wa, .js-wa-model");
+      if (!a) return;
+      e.preventDefault();
+      open(a.dataset.model);
+    });
+    opts.forEach(function (o) {
+      o.addEventListener("click", function () {
+        track("Contact", { content_name: model ? "Modelo " + model : "Presupuestar", cantidad: o.dataset.qty });
+        setTimeout(function () { dlg.close(); }, 300);
+      });
+    });
+    dlg.querySelector("[data-qty-low]").addEventListener("click", function () {
+      track("MenosDe500", { content_name: model ? "Modelo " + model : "Presupuestar" }, true);
+      ask.hidden = true; low.hidden = false;
+    });
+    dlg.querySelectorAll("[data-qty-close]").forEach(function (b) { b.addEventListener("click", function () { dlg.close(); }); });
+    dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); }); // tocar afuera cierra
+  })();
 
   // Carrusel del hero: flechas, puntos y swipe nativo (scroll-snap). No avanza solo.
   (function () {
