@@ -46,7 +46,7 @@
   /* ===== Base ===== */
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
-  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: var(--fs-body); line-height: 1.6; padding-bottom: var(--sticky-h); overflow-x: hidden; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: var(--fs-body); line-height: 1.6; padding-bottom: var(--sticky-h); overflow-x: hidden; overflow-x: clip; }
   img, video { display: block; max-width: 100%; height: auto; }
   h1, h2, h3 { font-family: var(--font-display); line-height: 1.12; margin: 0 0 .5em; letter-spacing: -.01em; }
   h1 { font-size: var(--fs-hero); font-weight: 700; }
@@ -75,11 +75,13 @@
   .section--ink .btn-primary:focus-visible { outline-color: var(--white); }
 
   /* ===== 0 · Barra + header ===== */
-  .topbar { background: var(--celeste-700); color: var(--white); font-size: .8125rem; text-align: center; padding: 8px var(--gutter); line-height: 1.4; }
-  .topbar b { font-weight: 600; }
-  .header { background: var(--white); border-bottom: 1px solid var(--line); }
-  .header .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 60px; gap: 12px; }
-  .header img { width: 150px; }
+  /* Barra superior fija: logo + fábrica · mínimo · envíos */
+  .header { position: sticky; top: 0; z-index: 30; background: var(--white); border-bottom: 1px solid var(--line); box-shadow: 0 2px 10px rgba(14,42,51,.06); }
+  .header .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 60px; gap: 12px; padding-top: 8px; padding-bottom: 8px; }
+  .header img { width: 112px; flex: none; }
+  .header-info { margin: 0; display: flex; flex-direction: column; align-items: flex-end; text-align: right; font-size: .75rem; line-height: 1.35; color: var(--ink-2); }
+  .header-info b { color: var(--celeste-700); font-weight: 600; }
+  main section, #inicio { scroll-margin-top: 72px; }
   .header .btn { display: none; min-height: 44px; padding: 0 18px; font-size: .9375rem; }
 
   /* ===== 1 · Hero ===== */
@@ -234,8 +236,9 @@
     :root { --section-y: 88px; --gutter: 32px; }
     body { padding-bottom: 0; }
     .sticky { display: none; }
-    .header .btn { display: inline-flex; }
-    .header img { width: 180px; }
+    .header .btn { display: inline-flex; flex: none; }
+    .header img { width: 170px; }
+    .header-info { margin-left: auto; margin-right: 8px; font-size: .8125rem; }
     .cta-row { flex-direction: row; align-items: center; gap: 16px; }
     .trust { justify-content: flex-start; margin-top: 0; }
     .hero { padding: 56px 0 var(--section-y); }
@@ -254,6 +257,12 @@
     .guarantee .seal { width: 72px; height: 72px; }
     .faq { max-width: 820px; }
     .final .cta-row { justify-content: center; }
+  }
+
+  /* Barra superior en pantallas anchas: los tres datos en una sola línea */
+  @media (min-width: 1100px) {
+    .header-info { flex-direction: row; align-items: center; font-size: .875rem; }
+    .header-info span::before { content: "·"; margin: 0 10px; color: var(--line); }
   }
 
   /* ===== Pasada de mobile (paso 13): sólo afecta a pantallas de menos de 768px ===== */
@@ -315,12 +324,14 @@
 <body>
 
 <!-- ===================================================================
-  0 · BARRA SUPERIOR · dolor 2 (filtro: el mínimo aparece antes del primer botón)
+  0 · BARRA SUPERIOR FIJA · dolor 2 (filtro: el mínimo queda siempre a la vista)
+  Logo + "Fábrica de bolsas de friselina · Pedido mínimo 500 unidades · Envíos a todo el país".
+  Queda fija arriba al hacer scroll (12/11, pedido del cliente). El botón fijo de abajo sigue igual.
 =================================================================== -->
-<div class="topbar"><b>Fábrica de bolsas de friselina</b> · Pedido mínimo 500 unidades · Envíos a todo el país</div>
 <header class="header">
   <div class="wrap">
     <img src="assets/fotos/logo-sukybol.png" alt="Sukybol" width="491" height="94">
+    <p class="header-info"><b>Fábrica de bolsas de friselina</b><span>Pedido mínimo 500 unidades</span><span>Envíos a todo el país</span></p>
     <a class="btn btn-primary js-wa" href="#">Presupuestar</a>
   </div>
 </header>
